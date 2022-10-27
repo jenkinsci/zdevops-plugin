@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
+	<form:section title="${%zdevops.config.ZOSConnectionList.sectionTitle}">
+		<form:block>
+			<jelly:out value="${%zdevops.config.ZOSConnectionList.sectionDescription}"/>
+		</form:block>
+		<form:entry>
+			<form:repeatableProperty field="connections" header="${%zdevops.config.ZOSConnectionList.connectionsList.itemHeader}">
+				<form:entry title="">
+					<div align="right">
+						<form:repeatableDeleteButton/>
+					</div>
+				</form:entry>
+			</form:repeatableProperty>
+		</form:entry>
+	</form:section>
+</jelly:jelly>
