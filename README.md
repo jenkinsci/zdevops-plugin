@@ -19,7 +19,7 @@ You can save as many connections as you like, so as not to remember them and kee
 
 ## Use case
 - Add a zosmf connection in settings (<b>Manage Jenkins -> Configure System -> z/OS Connection List</b>). Enter connection name, zosmf url, username and password.
-- Create Pipeline plugin and open its configuration.
+- Create a new item -> ```Pipeline``` and open its configuration.
   Create a section <b>zosmf</b> inside <b>steps</b> of <b>stage</b> and pass connection name as a parameter of section. Inside zosmf body invoke necessary zosmf functions (they will be automatically done in specified connection context). Take a look at example below:
 ```groovy
 stage ("stage-name") {
@@ -44,7 +44,7 @@ stage ("stage-name") {
 ```
 
 ## Manual Jenkins plugin installation (Installation via source code build and .hpi file upload)
-1. Download the Jenkins zOS DevOps plugin source code from its [official GitHub repository]()
+1. Download the Jenkins zOS DevOps plugin source code from its [official GitHub repository](https://github.com/IBA-mainframe-dev/zOS-DevOps-Jenkins-plugin)
 2. It is necessary to build the project with the help of Gradle Build Tool
 3. Next, you need to generate an installation file - .hpi or .jpi file (both are installation files for the jenkins plugin). This can be done by executing “gradle jpi” command. Or for example: <b>Gradle -> build -> jpi</b>
 4. After building the .hpi/.jpi file, it should appear in a <b><Plugin-project-name>/build/libs/<hpi_file_name>.hpi</b> directory
