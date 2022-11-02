@@ -29,7 +29,7 @@ abstract class AbstractZosmfAction : Builder(), SimpleBuildStep {
 
   override fun perform(run: Run<*, *>, workspace: FilePath, env: EnvVars, launcher: Launcher, listener: TaskListener) {
     val connectionName = workspace.read().readBytes().toString(StandardCharsets.UTF_8)
-    val connection = ZOSConnectionList.resolve(connectionName) ?: let {
+    val connection = ZOSConnectionList.resolve(connectionName, run) ?: let {
 
       val exception = IllegalArgumentException(Messages.zdevops_config_ZOSConnection_resolve_unknown(connectionName))
       val sw = StringWriter()

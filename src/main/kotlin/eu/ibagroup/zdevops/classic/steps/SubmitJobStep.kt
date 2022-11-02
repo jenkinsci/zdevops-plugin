@@ -11,6 +11,7 @@ import hudson.model.AbstractBuild
 import hudson.model.BuildListener
 import hudson.util.ListBoxModel
 import jenkins.model.GlobalConfiguration
+import jenkins.model.Jenkins
 import org.kohsuke.stapler.DataBoundConstructor
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -51,8 +52,11 @@ constructor(
     fun doFillConnectionNameItems(): ListBoxModel {
       val result = ListBoxModel()
 
-      GlobalConfiguration.all().get(ZOSConnectionList::class.java)?.connections?.forEach {
-        result.add("${it.name} - (${it.url})", it.name)
+      if (Jenkins.get().hasPermission(Jenkins.ADMINISTER)) {
+
+        GlobalConfiguration.all().get(ZOSConnectionList::class.java)?.connections?.forEach {
+          result.add("${it.name} - (${it.url})", it.name)
+        }
       }
 
       return result

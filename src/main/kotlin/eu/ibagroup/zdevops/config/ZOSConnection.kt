@@ -1,5 +1,7 @@
 package eu.ibagroup.zdevops.config;
 
+import com.cloudbees.plugins.credentials.CredentialsProvider
+import com.cloudbees.plugins.credentials.CredentialsProviderManager
 import com.cloudbees.plugins.credentials.common.StandardCredentials
 import com.cloudbees.plugins.credentials.common.StandardListBoxModel
 import com.cloudbees.plugins.credentials.common.StandardUsernameCredentials
@@ -65,7 +67,7 @@ constructor(
 
 
     fun doFillCredentialsIdItems(): ListBoxModel? {
-      return if (Jenkins.get().hasPermission(Item.CONFIGURE)) {
+      return if (Jenkins.get().hasPermission(Jenkins.ADMINISTER)) {
         StandardListBoxModel()
           .includeEmptyValue()
           .includeMatchingAs(

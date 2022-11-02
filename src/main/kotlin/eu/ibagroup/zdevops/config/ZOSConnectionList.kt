@@ -1,12 +1,14 @@
 package eu.ibagroup.zdevops.config;
 
 import com.cloudbees.plugins.credentials.CredentialsMatchers
+import com.cloudbees.plugins.credentials.CredentialsProvider
 import com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials
 import com.cloudbees.plugins.credentials.common.StandardCredentials
 import com.cloudbees.plugins.credentials.common.StandardUsernamePasswordCredentials
 import com.cloudbees.plugins.credentials.domains.URIRequirementBuilder
 import eu.ibagroup.zdevops.model.ResolvedZOSConnection
 import hudson.Extension
+import hudson.model.Run
 import hudson.security.ACL
 import jenkins.model.GlobalConfiguration
 import jenkins.model.Jenkins
@@ -34,17 +36,14 @@ class ZOSConnectionList : GlobalConfiguration() {
   }
 
   companion object {
-    fun resolve(connection: String): ResolvedZOSConnection? {
+    fun resolve(connection: String, run: Run<*, *>): ResolvedZOSConnection? {
       val zOSConnection = all().get(ZOSConnectionList::class.java)?.connections?.find { it.name == connection } ?: return null
 
-      val credentials = CredentialsMatchers.firstOrNull(
-        lookupCredentials(
-          StandardCredentials::class.java,
-          Jenkins.get(),
-          ACL.SYSTEM,
-          URIRequirementBuilder.fromUri("").build()
-        ),
-        CredentialsMatchers.withId(zOSConnection.credentialsId)
+      val credentials = CredentialsProvider.findCredentialById(
+        zOSConnection.credentialsId,
+        StandardCredentials::class.java,
+        run,
+        URIRequirementBuilder.fromUri("").build()
       )
 
       if (credentials !is StandardUsernamePasswordCredentials) {

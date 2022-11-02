@@ -25,7 +25,7 @@ abstract class AbstractBuildStep(private val connectionName: String) : Builder()
                          launcher: Launcher,
                          listener: BuildListener): Boolean {
 
-        val connection = ZOSConnectionList.resolve(connectionName) ?: let{
+        val connection = ZOSConnectionList.resolve(connectionName, build) ?: let{
             val exception = IllegalArgumentException(Messages.zdevops_config_ZOSConnection_resolve_unknown(connectionName))
             val sw = StringWriter()
             exception.printStackTrace(PrintWriter(sw))
