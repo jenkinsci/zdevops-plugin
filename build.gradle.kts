@@ -25,7 +25,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
-    implementation("eu.ibagroup:r2z:1.2.0-rc.3")
+    implementation("eu.ibagroup:r2z:1.2.2")
 
     // Jenkins development related plugins
     implementation("org.jenkins-ci.plugins.workflow:workflow-step-api:2.23")
