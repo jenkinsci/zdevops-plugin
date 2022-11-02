@@ -11,9 +11,6 @@ plugins {
 
 repositories {
     mavenCentral()
-    flatDir {
-        dirs("lib")
-    }
 }
 
 dependencies {
