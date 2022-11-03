@@ -9,6 +9,7 @@ import hudson.Extension
 import hudson.Launcher
 import hudson.model.AbstractBuild
 import hudson.model.BuildListener
+import hudson.model.Job
 import hudson.util.ListBoxModel
 import jenkins.model.GlobalConfiguration
 import jenkins.model.Jenkins
@@ -52,8 +53,7 @@ constructor(
     fun doFillConnectionNameItems(): ListBoxModel {
       val result = ListBoxModel()
 
-      if (Jenkins.get().hasPermission(Jenkins.ADMINISTER)) {
-
+      if (Jenkins.get().hasPermission(Job.CONFIGURE)) {
         GlobalConfiguration.all().get(ZOSConnectionList::class.java)?.connections?.forEach {
           result.add("${it.name} - (${it.url})", it.name)
         }
