@@ -42,13 +42,21 @@ kapt {
 
 jenkinsPlugin {
     jenkinsVersion.set("2.357")
-    displayName = "z/OS DevOps Plugin"
+    displayName = "z/OS DevOps"
     shortName = "zos-devops"
-    gitHubUrl = "https://github.com/IlyaAbnitski/zos-devops-plugin.git"
+    gitHubUrl = "https://github.com/jenkinsci/zos-devops-plugin.git"
 
     compatibleSinceVersion = jenkinsVersion.get()
     fileExtension = "hpi"
     pluginFirstClassLoader = true
+
+    licenses = this.Licenses().apply {
+        license(delegateClosureOf<org.jenkinsci.gradle.plugins.jpi.JpiLicense> {
+            setProperty("name", "Apache License, Version 2.0")
+            setProperty("url", "https://www.apache.org/licenses/LICENSE-2.0.txt")
+            setProperty("distribution", "repo")
+        })
+    }
 }
 
 tasks.withType(KotlinCompile::class.java).all {
