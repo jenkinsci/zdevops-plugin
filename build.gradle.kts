@@ -43,7 +43,7 @@ kapt {
 jenkinsPlugin {
     jenkinsVersion.set("2.357")
     displayName = "z/OS DevOps"
-    shortName = "zos-devops"
+    shortName = "zdevops"
     gitHubUrl = "https://github.com/jenkinsci/zos-devops-plugin.git"
 
     compatibleSinceVersion = jenkinsVersion.get()
