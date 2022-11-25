@@ -16,7 +16,7 @@ repositories {
 dependencies {
     implementation(fileTree("lib"))
     compileOnly(fileTree("lib"))
-    kotlin("stdlib", kotlinVersion as String)
+    kotlin("stdlib-jre11", kotlinVersion as String)
 
     // Retrofit and r2z is used to run z/OSMF REST API
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
