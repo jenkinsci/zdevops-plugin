@@ -38,6 +38,7 @@ java {
 
 kapt {
     correctErrorTypes = true
+    includeCompileClasspath = false
 }
 
 jenkinsPlugin {
