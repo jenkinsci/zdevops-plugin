@@ -1,3 +1,1 @@
-buildPluginWithGradle(useContainerAgent: true, configurations: [
-    [platform: 'linux', jdk: '11']
-])
+buildPluginWithGradle(useContainerAgent: true, tests: [[skip: 'true']], configurations: [[platform: 'linux', jdk: '11']])
