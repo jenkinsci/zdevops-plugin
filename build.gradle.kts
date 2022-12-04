@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val kotlinVersion = findProperty("kotlinVersion")
 
 project.gradle.startParameter.excludedTaskNames.add("copyGeneratedJenkinsTestPluginDependencies")
+project.gradle.startParameter.excludedTaskNames.add("copyTestPluginDependencies")
 
 plugins {
     kotlin("jvm") version ("1.5.10")
