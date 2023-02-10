@@ -5,7 +5,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  *
- * Copyright IBA Group 2020
+ * Copyright IBA Group 2022
  */
 
 package io.jenkins.plugins.zdevops.config;
