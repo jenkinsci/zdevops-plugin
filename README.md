@@ -1,4 +1,4 @@
-# z/OS DevOps Jenkins plugin
+# Zowe z/OS DevOps Jenkins plugin
 
 ## Main features
 - Secure and modern connection of Jenkins to the mainframes through the use of zOSMF REST API
@@ -20,7 +20,7 @@ Assuming a <b>.hpi</b> file has been downloaded, a logged-in Jenkins administrat
 4. <b>Deploy</b> the plugin file.
 
 ## Manual Jenkins plugin installation (Installation via source code build and .hpi file upload)
-1. Download the Jenkins zOS DevOps plugin source code from its [official GitHub repository](https://github.com/IBA-mainframe-dev/zOS-DevOps-Jenkins-plugin)
+1. Download the Jenkins zOS DevOps plugin source code from its [official GitHub repository](https://github.com/zowe/zowe-zdevops-jenkins-plugin)
 2. It is necessary to build the project with the help of the Gradle Build Tool
 3. Next, you need to generate an installation file: .hpi or .jpi file (both are installation files for the Jenkins plugin). This can be done by executing “gradle jpi” command. Or for example: <b>Gradle -> build -> jpi</b>
 4. After building the .hpi/.jpi file, it should appear in a <b><Plugin-project-name>/build/libs/<hpi_file_name>.hpi</b> directory
@@ -63,8 +63,14 @@ stage ("stage-name") {
 }
 ```
 
+## How to run:
+- `./gradlew server --debug-jvm`
+- wait until `hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running`
+- open `localhost:8080`
+- enjoy
+
 ## How to run in Debug:
-- ./gradlew server --debug-jvm
+- `./gradlew server --debug-jvm`
 - wait until `Attach debugger` appears in console
 - click it
 - wait until Jenkins is deployed

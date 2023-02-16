@@ -10,10 +10,10 @@
 
 package io.jenkins.plugins.zdevops.declarative.jobs
 
-import eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
-import eu.ibagroup.r2z.zowe.client.sdk.zosjobs.GetJobs
-import eu.ibagroup.r2z.zowe.client.sdk.zosjobs.MonitorJobs
-import eu.ibagroup.r2z.zowe.client.sdk.zosjobs.SubmitJobs
+import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
+import org.zowe.kotlinsdk.zowe.client.sdk.zosjobs.GetJobs
+import org.zowe.kotlinsdk.zowe.client.sdk.zosjobs.MonitorJobs
+import org.zowe.kotlinsdk.zowe.client.sdk.zosjobs.SubmitJobs
 import io.jenkins.plugins.zdevops.declarative.AbstractZosmfAction
 import hudson.*
 import hudson.model.Run

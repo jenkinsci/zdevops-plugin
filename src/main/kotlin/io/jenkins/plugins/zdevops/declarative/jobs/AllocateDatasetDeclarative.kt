@@ -10,9 +10,9 @@
 
 package io.jenkins.plugins.zdevops.declarative.jobs
 
-import eu.ibagroup.r2z.*
-import eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.ZosDsn
+import org.zowe.kotlinsdk.*
+import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.ZosDsn
 import io.jenkins.plugins.zdevops.declarative.AbstractZosmfAction
 import hudson.*
 import hudson.FilePath
@@ -117,4 +117,3 @@ class AllocateDatasetDeclarative @DataBoundConstructor constructor(private val d
     @Extension
     class DescriptorImpl : Companion.DefaultBuildDescriptor("Allocate Dataset Declarative")
 }
-

@@ -16,14 +16,17 @@ project.gradle.startParameter.excludedTaskNames.add("copyGeneratedJenkinsTestPlu
 project.gradle.startParameter.excludedTaskNames.add("copyTestPluginDependencies")
 
 plugins {
-    kotlin("jvm") version ("1.5.10")
-    kotlin("kapt") version ("1.5.10")
+    kotlin("jvm") version ("1.6.0")
+    kotlin("kapt") version ("1.6.0")
 
     id("org.jenkins-ci.jpi") version ("0.43.0")
 }
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://zowe.jfrog.io/zowe/libs-release")
+    }
 }
 
 dependencies {
@@ -35,7 +38,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
-    implementation("eu.ibagroup:r2z:1.2.2")
+    implementation("org.zowe.sdk:zowe-kotlin-sdk:0.3.1")
 
     // Jenkins development related plugins
     implementation("org.jenkins-ci.plugins.workflow:workflow-step-api:2.23")
@@ -56,7 +59,7 @@ kapt {
 
 jenkinsPlugin {
     jenkinsVersion.set("2.357")
-    displayName = "z/OS DevOps"
+    displayName = "Zowe z/OS DevOps"
     shortName = "zdevops"
     gitHubUrl = "https://github.com/jenkinsci/zos-devops-plugin.git"
 
@@ -66,8 +69,8 @@ jenkinsPlugin {
 
     licenses = this.Licenses().apply {
         license(delegateClosureOf<org.jenkinsci.gradle.plugins.jpi.JpiLicense> {
-            setProperty("name", "Apache License, Version 2.0")
-            setProperty("url", "https://www.apache.org/licenses/LICENSE-2.0.txt")
+            setProperty("name", "Eclipse Public License - v 2.0")
+            setProperty("url", "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt")
             setProperty("distribution", "repo")
         })
     }

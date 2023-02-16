@@ -10,7 +10,7 @@
 
 package io.jenkins.plugins.zdevops.classic.steps
 
-import eu.ibagroup.r2z.zowe.client.sdk.zosjobs.SubmitJobs
+import org.zowe.kotlinsdk.zowe.client.sdk.zosjobs.SubmitJobs
 import io.jenkins.plugins.zdevops.Messages
 import io.jenkins.plugins.zdevops.classic.AbstractBuildStep
 import io.jenkins.plugins.zdevops.config.ZOSConnectionList
@@ -37,7 +37,7 @@ constructor(
       build: AbstractBuild<*, *>,
       launcher: Launcher,
       listener: BuildListener,
-      zosConnection: eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
+      zosConnection: org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
   ) {
     runCatching {
       listener.logger.println(Messages.zdevops_classic_ZOSJobs_submitting(jobName, zosConnection.host, zosConnection.zosmfPort))

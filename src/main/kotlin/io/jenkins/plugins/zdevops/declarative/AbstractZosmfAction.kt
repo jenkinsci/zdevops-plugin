@@ -10,7 +10,7 @@
 
 package io.jenkins.plugins.zdevops.declarative
 
-import eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
+import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
 import io.jenkins.plugins.zdevops.config.ZOSConnectionList
 import io.jenkins.plugins.zdevops.Messages
 import hudson.AbortException

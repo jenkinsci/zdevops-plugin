@@ -10,12 +10,12 @@
 
 package io.jenkins.plugins.zdevops.declarative.jobs
 
-import eu.ibagroup.r2z.DatasetOrganization
-import eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.ZosDsnDownload
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.ZosDsnList
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.input.DownloadParams
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.input.ListParams
+import org.zowe.kotlinsdk.DatasetOrganization
+import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.ZosDsnDownload
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.ZosDsnList
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.input.DownloadParams
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.input.ListParams
 import io.jenkins.plugins.zdevops.declarative.AbstractZosmfAction
 import hudson.*
 import hudson.model.Run

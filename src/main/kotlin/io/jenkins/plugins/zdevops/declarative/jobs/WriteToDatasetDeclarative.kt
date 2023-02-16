@@ -10,8 +10,8 @@
 
 package io.jenkins.plugins.zdevops.declarative.jobs
 
-import eu.ibagroup.r2z.zowe.client.sdk.core.ZOSConnection
-import eu.ibagroup.r2z.zowe.client.sdk.zosfiles.ZosDsn
+import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
+import org.zowe.kotlinsdk.zowe.client.sdk.zosfiles.ZosDsn
 import io.jenkins.plugins.zdevops.declarative.AbstractZosmfAction
 import hudson.*
 import hudson.FilePath
@@ -65,4 +65,3 @@ class WriteToDatasetDeclarative @DataBoundConstructor constructor(private val ds
     @Extension
     class DescriptorImpl : Companion.DefaultBuildDescriptor("Write to Dataset Declarative")
 }
-
