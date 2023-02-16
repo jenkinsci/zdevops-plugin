@@ -16,8 +16,8 @@ project.gradle.startParameter.excludedTaskNames.add("copyGeneratedJenkinsTestPlu
 project.gradle.startParameter.excludedTaskNames.add("copyTestPluginDependencies")
 
 plugins {
-    kotlin("jvm") version ("1.5.10")
-    kotlin("kapt") version ("1.5.10")
+    kotlin("jvm") version ("1.6.0")
+    kotlin("kapt") version ("1.6.0")
 
     id("org.jenkins-ci.jpi") version ("0.43.0")
 }
@@ -38,7 +38,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
-    implementation("org.zowe.sdk:zowe-client-kotlin-sdk:0.4.0-rc.2")
+    implementation("org.zowe.sdk:zowe-kotlin-sdk:0.3.1")
 
     // Jenkins development related plugins
     implementation("org.jenkins-ci.plugins.workflow:workflow-step-api:2.23")
@@ -70,7 +70,7 @@ jenkinsPlugin {
     licenses = this.Licenses().apply {
         license(delegateClosureOf<org.jenkinsci.gradle.plugins.jpi.JpiLicense> {
             setProperty("name", "Eclipse Public License - v 2.0")
-            setProperty("url", "https://www.eclipse.org/org/documents/epl-1.0/EPL-1.0.txt")
+            setProperty("url", "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt")
             setProperty("distribution", "repo")
         })
     }

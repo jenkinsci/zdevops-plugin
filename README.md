@@ -63,8 +63,14 @@ stage ("stage-name") {
 }
 ```
 
+## How to run:
+- `./gradlew server --debug-jvm`
+- wait until `hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running`
+- open `localhost:8080`
+- enjoy
+
 ## How to run in Debug:
-- ./gradlew server --debug-jvm
+- `./gradlew server --debug-jvm`
 - wait until `Attach debugger` appears in console
 - click it
 - wait until Jenkins is deployed
