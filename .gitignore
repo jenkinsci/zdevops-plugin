@@ -1,5 +1,7 @@
-.gradle/
+# mvn hpi:run
+work
+
+target
 .idea/
 .vscode
 build/
-work/

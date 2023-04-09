@@ -11,15 +11,15 @@
 package io.jenkins.plugins.zdevops.classic
 
 import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
-import io.jenkins.plugins.zdevops.config.ZOSConnectionList
-import io.jenkins.plugins.zdevops.Messages
 import hudson.Launcher
 import hudson.tasks.BuildStepDescriptor
 import hudson.tasks.Builder
 import jenkins.tasks.SimpleBuildStep
 import java.io.PrintWriter
 import java.io.StringWriter
+import io.jenkins.plugins.zdevops.config.ZOSConnectionList
 import hudson.model.*
+import io.jenkins.plugins.zdevops.Messages
 import java.net.URL
 
 abstract class AbstractBuildStep(private val connectionName: String) : Builder(), SimpleBuildStep {
@@ -33,7 +33,7 @@ abstract class AbstractBuildStep(private val connectionName: String) : Builder()
                          launcher: Launcher,
                          listener: BuildListener): Boolean {
 
-        val connection = ZOSConnectionList.resolve(connectionName, build) ?: let{
+        val connection = ZOSConnectionList.resolve(connectionName) ?: let{
             val exception = IllegalArgumentException(Messages.zdevops_config_ZOSConnection_resolve_unknown(connectionName))
             val sw = StringWriter()
             exception.printStackTrace(PrintWriter(sw))

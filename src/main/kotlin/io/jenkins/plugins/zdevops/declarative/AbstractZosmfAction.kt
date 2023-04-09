@@ -11,8 +11,8 @@
 package io.jenkins.plugins.zdevops.declarative
 
 import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
-import io.jenkins.plugins.zdevops.config.ZOSConnectionList
 import io.jenkins.plugins.zdevops.Messages
+import io.jenkins.plugins.zdevops.config.ZOSConnectionList
 import hudson.AbortException
 import hudson.EnvVars
 import hudson.FilePath
@@ -38,7 +38,7 @@ abstract class AbstractZosmfAction : Builder(), SimpleBuildStep {
 
   override fun perform(run: Run<*, *>, workspace: FilePath, env: EnvVars, launcher: Launcher, listener: TaskListener) {
     val connectionName = workspace.read().readBytes().toString(StandardCharsets.UTF_8)
-    val connection = ZOSConnectionList.resolve(connectionName, run) ?: let {
+    val connection = ZOSConnectionList.resolve(connectionName) ?: let {
 
       val exception = IllegalArgumentException(Messages.zdevops_config_ZOSConnection_resolve_unknown(connectionName))
       val sw = StringWriter()
