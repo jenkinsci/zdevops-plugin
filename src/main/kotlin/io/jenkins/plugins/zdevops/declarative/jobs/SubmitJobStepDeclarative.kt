@@ -13,14 +13,13 @@ package io.jenkins.plugins.zdevops.declarative.jobs
 import org.zowe.kotlinsdk.zowe.client.sdk.core.ZOSConnection
 import org.zowe.kotlinsdk.zowe.client.sdk.zosjobs.SubmitJobs
 import io.jenkins.plugins.zdevops.declarative.AbstractZosmfAction
-import io.jenkins.plugins.zdevops.Messages
 import hudson.*
 import hudson.model.Run
 import hudson.model.TaskListener
 import org.jenkinsci.Symbol
 import org.kohsuke.stapler.DataBoundConstructor
 
-typealias zMessages = Messages
+typealias zMessages = io.jenkins.plugins.zdevops.Messages
 
 class SubmitJobStepDeclarative @DataBoundConstructor constructor(private val fileToSubmit: String) :
   AbstractZosmfAction() {

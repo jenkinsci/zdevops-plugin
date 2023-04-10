@@ -13,4 +13,9 @@
     <form:entry field="credentialsId" title="${%zdevops.config.ZOSConnection.credentialsId.title}">
         <c:select />
     </form:entry>
+    <form:validateButton method="validateConnection"
+                         title="Validate connection"
+                         progress="Testing..."
+                         with="name,url,credentialsId"
+    />
 </jelly:jelly>

@@ -5,7 +5,7 @@
 <jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
 	<form:section title="${%zdevops.config.ZOSConnectionList.sectionTitle}">
 		<form:block>
-			<form:description>${%zdevops.config.ZOSConnectionList.sectionDescription}</form:description>
+			<jelly:out value="${%zdevops.config.ZOSConnectionList.sectionDescription}"/>
 		</form:block>
 		<form:entry>
 			<form:repeatableProperty field="connections" header="${%zdevops.config.ZOSConnectionList.connectionsList.itemHeader}">
