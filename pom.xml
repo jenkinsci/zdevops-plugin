@@ -249,7 +249,7 @@
         <dependency>
             <groupId>org.zowe.sdk</groupId>
             <artifactId>zowe-kotlin-sdk</artifactId>
-            <version>0.4.0-rc.2</version>
+            <version>0.4.0</version>
         </dependency>
 
         <dependency>
