@@ -22,7 +22,7 @@
         <changelist>-SNAPSHOT</changelist>
         <jenkins.version>2.375</jenkins.version>
         <java.version>11</java.version>
-        <kotlin.version>1.7.0</kotlin.version>
+        <kotlin.version>1.8.20</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <sezpoz.version>1.13</sezpoz.version>
         <kotlin.code.style>official</kotlin.code.style>
