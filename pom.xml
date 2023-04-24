@@ -4,12 +4,12 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.58</version>
+        <version>4.61</version>
         <relativePath />
     </parent>
 
     <artifactId>zdevops</artifactId>
-    <version>${revision}${changelist}</version>
+    <version>0.1.0</version>
     <name>Zowe zDevOps</name>
     <groupId>io.jenkins.plugins</groupId>
     <packaging>hpi</packaging>
@@ -22,7 +22,7 @@
         <changelist>-SNAPSHOT</changelist>
         <jenkins.version>2.375</jenkins.version>
         <java.version>11</java.version>
-        <kotlin.version>1.7.0</kotlin.version>
+        <kotlin.version>1.8.20</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <sezpoz.version>1.13</sezpoz.version>
         <kotlin.code.style>official</kotlin.code.style>
@@ -53,7 +53,7 @@
         <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
         <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
         <url>https://github.com/${gitHubRepo}</url>
-        <tag>${scmTag}</tag>
+        <tag>zdevops-0.1.0</tag>
     </scm>
 
     <build>
@@ -267,20 +267,20 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-aggregator</artifactId>
-            <version>2.6</version>
+            <version>596.v8c21c963d92d</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10</version>
+            <version>2.10.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>script-security</artifactId>
-            <version>1.78</version>
+            <version>1244.ve463715a_f89c</version>
         </dependency>
 
         <dependency>
