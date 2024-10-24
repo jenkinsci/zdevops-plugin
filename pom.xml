@@ -18,7 +18,7 @@
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
 
     <properties>
-        <revision>1.2.0-</revision>
+        <revision>1.1.0-</revision>
         <changelist>-SNAPSHOT</changelist>
         <jenkins.version>2.414.3</jenkins.version>
         <java.version>17</java.version>
@@ -26,7 +26,7 @@
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <sezpoz.version>1.13</sezpoz.version>
         <okhttp3.version>4.10.0</okhttp3.version>
-        <zowekotlinsdk.version>0.5.0-rc.11</zowekotlinsdk.version>
+        <zowekotlinsdk.version>0.5.0</zowekotlinsdk.version>
         <kotest.version>5.6.1</kotest.version>
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
@@ -335,7 +335,7 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>2.2</version>
+            <version>2.3</version>
         </dependency>
 
         <dependency>
@@ -371,7 +371,13 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10.1</version>
+            <version>2.11.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
+            <version>2.27.0</version>
         </dependency>
 
         <dependency>
