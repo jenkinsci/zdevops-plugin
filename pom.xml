@@ -10,7 +10,7 @@
 
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>zdevops</artifactId>
-    <version>${revision}${changelist}</version>
+    <version>${revision}.${changelist}</version>
     <name>Zowe zDevOps</name>
     <packaging>hpi</packaging>
     <description>Zowe mainframe z/OS automation plugin, working through z/OSMF REST API and using Zowe Kotlin SDK</description>
@@ -18,8 +18,8 @@
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
 
     <properties>
-        <revision>1.1.0-</revision>
-        <changelist>-SNAPSHOT</changelist>
+        <revision>1.1.0</revision>
+        <changelist>999999-SNAPSHOT</changelist>
         <jenkins.version>2.414.3</jenkins.version>
         <java.version>17</java.version>
         <kotlin.version>1.9.20</kotlin.version>
