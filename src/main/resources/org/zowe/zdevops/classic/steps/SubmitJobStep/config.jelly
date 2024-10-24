@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form" xmlns:stapler="jelly:stapler">
+
+    <jelly:set var="stepId" value="${descriptor.createStepId()}" />
+    <p>${stepId}</p>
+
+    <form:entry field="connectionName" title="${%zdevops.classic.connection.title}">
+		<form:select/>
+	</form:entry>
+    <form:entry field="jobName" title="${%zdevops.classic.jobName.title}" description="${%zdevops.classic.jobName.description}">
+        <form:textbox/>
+    </form:entry>
+    <form:entry title="Wait till end and get logs" field="sync">
+        <form:checkbox id="${stepId}_sync"  onclick="checkSync${stepId}();"/>
+    </form:entry>
+    <form:entry  title="Fail if RC is not 0000" field="checkRC">
+        <form:checkbox id="${stepId}_checkRC" onclick="checkSync${stepId}();"/>
+    </form:entry>
+
+    <script>
+        function checkSync${stepId}() {
+            var sync = document.getElementById('${stepId}_sync');
+            var checkRC = document.getElementById('${stepId}_checkRC');
+
+            checkRC.readonly = sync.checked;
+            console.log("it works");
+            if (!sync.checked &amp;&amp; checkRC.checked) {
+                checkRC.checked = false;
+                checkRC.readonly = true;
+            }
+        }
+    </script>
+
+</jelly:jelly>

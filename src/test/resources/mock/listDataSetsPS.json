@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "dsname": "TEST.IJMP.DATASET4",
+      "blksz": "129",
+      "catnm": "TEST.CATALOG.MASTER",
+      "cdate": "2021/01/17",
+      "dev": "3390",
+      "dsorg": "PS",
+      "edate": "***None***",
+      "extx": "1",
+      "lrecl": "125",
+      "migr": "NO",
+      "mvol": "N",
+      "ovf": "NO",
+      "rdate": "2021/11/17",
+      "recfm": "VA",
+      "sizex": "9",
+      "spacu": "BLOCKS",
+      "used": "33",
+      "vol": "TESTVOL",
+      "vols": "TESTVOL"
+    }
+  ],
+  "returnedRows": 1,
+  "totalRows": 1,
+  "JSONversion": 1
+}

@@ -1,7 +1,11 @@
-# mvn hpi:run
 work
 
 target
 .idea/
 .vscode
+.gradle/
 build/
+/*.iml
+
+
+src/test/resources/trash/
