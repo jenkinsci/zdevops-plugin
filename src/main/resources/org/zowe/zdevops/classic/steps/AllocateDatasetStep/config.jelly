@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
+    <form:entry field="connectionName" title="${%zdevops.classic.connection.title}">
+        <form:select/>
+    </form:entry>
+    <form:entry field="dsn" title="${%zdevops.classic.dsn.title}">
+        <form:textbox/>
+    </form:entry>
+    <table style="width: 100%">
+<!--    help="/plugin/zdevops/help-mgntClass.html"-->
+        <tr>
+            <td>
+                <form:entry field="mgntClass" title="${%zdevops.classic.mgntClass.title}" description="${%zdevops.classic.mgntClass.description}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+            <td>
+                <form:entry field="storClass" title="${%zdevops.classic.storClass.title}" description="${%zdevops.classic.storClass.description}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+            <td>
+                <form:entry field="dataClass" title="${%zdevops.classic.dataClass.title}" description="${%zdevops.classic.dataClass.description}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+        </tr>
+    </table>
+    <form:entry field="volser" title="${%zdevops.classic.volser.title}" description="${%zdevops.classic.volser.description}">
+        <form:textbox/>
+    </form:entry>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <form:entry field="dsOrg" title="${%zdevops.classic.dsOrg.title}">
+                    <form:select/>
+                </form:entry>
+            </td>
+            <td>
+                <form:entry field="dsnType" title="${%zdevops.classic.dsnType.title}">
+                    <form:select/>
+                </form:entry>
+            </td>
+        </tr>
+    </table>
+    <form:entry field="alcUnit" title="${%zdevops.classic.alcUnit.title}">
+        <form:select/>
+    </form:entry>
+    <table style="width: 100%">
+        <tr>
+            <td>
+                <form:entry field="primary" title="${%zdevops.classic.primary.title}" description="${%zdevops.classic.primary.description}">
+                    <form:textbox default="1"/>
+                </form:entry>
+            </td>
+            <td>
+                <form:entry field="secondary" title="${%zdevops.classic.secondary.title}" description="${%zdevops.classic.secondary.description}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+            <td>
+<!--                help="/plugin/zdevops/help-dirBlk.html"-->
+                <form:entry field="dirBlk" title="${%zdevops.classic.dirBlk.title}" description="${%zdevops.classic.dirBlk.description}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+        </tr>
+    </table>
+    <form:entry field="recFm" title="${%zdevops.classic.recFm.title}">
+        <form:select/>
+    </form:entry>
+    <table style="width: 100%">
+        <tr>
+            <td>
+                <form:entry field="lrecl" title="${%zdevops.classic.lrecl.title}">
+                    <form:textbox default="80"/>
+                </form:entry>
+            </td>
+            <td>
+                <form:entry field="blkSize" title="${%zdevops.classic.blkSize.title}">
+                    <form:textbox/>
+                </form:entry>
+            </td>
+        </tr>
+    </table>
+    <form:entry field="failOnExist" title="failOnExist?" description="If the dataset already exists and the option is enabled, execution will halt.">
+        <form:checkbox/>
+    </form:entry>
+</jelly:jelly>

@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-    Mainframes z/OS automation plugin, working through z/OSMF REST API and using Zowe Kotlin SDK.
+    Zowe mainframe z/OS automation plugin, working through z/OSMF REST API and using Zowe Kotlin SDK
 </div>

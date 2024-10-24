@@ -1,0 +1,60 @@
+name: Jenkins plugin .hpi build
+
+# This workflow will build an executable Jenkins plugin in .hpi format for further manual installation in Jenkins
+
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Jenkins plugin code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: maven
+
+      - name: Build Jenkins Plugin into .hpi
+        shell: bash
+        run: ./mvnw clean package
+
+      - name: Verify content of target folder
+        shell: bash
+        run: pwd && ls -l target/
+
+      - name: Archive the Build Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: zowe-zdevops-hpi
+          path: target/*.hpi
+          compression-level: 0 # no compression
+
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    needs: build
+    steps:
+      - name: Checkout the plugin GitHub repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: maven
+
+      - name: Run Unit Tests with Maven
+        shell: bash
+        run: ./mvnw test

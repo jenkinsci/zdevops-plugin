@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "member": "TEST1"
+    },
+    {
+      "member": "TEST2"
+    },
+    {
+      "member": "TEST3"
+    },
+    {
+      "member": "TEST4"
+    },
+    {
+      "member": "TEST5"
+    },
+    {
+      "member": "TEST6"
+    },
+    {
+      "member": "TEST7"
+    }
+  ],
+  "returnedRows": 7,
+  "JSONversion": 1
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
+
+    <jelly:set var="stepId" value="${descriptor.createStepId()}" />
+
+    <form:entry field="connectionName" title="${%zdevops.classic.connection.title}">
+        <form:select/>
+    </form:entry>
+    <form:entry field="filePathUSS" title="${%zdevops.classic.filePathUSS.title}">
+        <form:textbox/>
+    </form:entry>
+    <form:entry field="fileOption" title="${%zdevops.classic.fileOption.title}" description="${%zdevops.classic.fileOption.description}">
+        <form:select id="fileOption${stepId}"
+                     onchange="toggleFileFields${stepId}(this.value)"/>
+    </form:entry>
+    <div id="localFileFields${stepId}" style="display:none;">
+        <form:entry field="localFilePath" title="${%zdevops.classic.localFilePath.title}" description="${%zdevops.classic.localFilePath.description}">
+            <form:textbox id="localFilePath${stepId}"/>
+        </form:entry>
+    </div>
+    <div id="workspaceFileFields${stepId}" style="display: none;">
+        <form:entry field="workspacePath" title="${%zdevops.classic.workspacePath.title}">
+            <form:textbox id="workspacePath${stepId}"/>
+        </form:entry>
+    </div>
+    <form:entry field="binary" title="${%zdevops.classic.binary.title}">
+        <form:checkbox/>
+    </form:entry>
+
+    <script>
+        function toggleFileFields${stepId}(fileOption) {
+            const workspacePath = document.getElementById('workspacePath${stepId}');
+            const localFilePath = document.getElementById('localFilePath${stepId}');
+
+            if (fileOption == "local") {
+                document.getElementById("localFileFields${stepId}").style.display = "block";
+                document.getElementById("workspaceFileFields${stepId}").style.display = "none";
+                workspacePath.value = ""
+            } else if (fileOption == "workspace") {
+                document.getElementById("localFileFields${stepId}").style.display = "none";
+                document.getElementById("workspaceFileFields${stepId}").style.display = "block";
+                localFilePath.value = ""
+            } else if (fileOption == "choose") {
+                console.log(document.getElementById("localFileFields${stepId}"))
+                document.getElementById("localFileFields${stepId}").style.display = "none";
+                document.getElementById("workspaceFileFields${stepId}").style.display = "none";
+                localFilePath.value = ""
+                workspacePath.value = ""
+            }
+        }
+            toggleFileFields${stepId}("${instance.fileOption}");
+    </script>
+
+</jelly:jelly>

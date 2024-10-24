@@ -1,0 +1,4 @@
+//TESTJOB  JOB (,),'TEST JOB     ',
+//         MSGLEVEL=(1,1),
+//         MSGCLASS=H
+//STEP01   EXEC PGM=IEFBR14

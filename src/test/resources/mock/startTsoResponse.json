@@ -1,0 +1,16 @@
+{
+  "servletKey": "TEST-120-aabgaaad",
+  "queueID": "655385",
+  "sessionID": "0x78",
+  "ver": "0100",
+  "tsoData": [
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "IKJ56455I TEST LOGON IN PROGRESS AT 14:19:47 ON OCTOBER 4, 2023"
+      }
+    }
+  ],
+  "reused": false,
+  "timeout": false
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
+	<form:entry field="connectionName" title="${%zdevops.classic.connection.title}">
+		<form:select/>
+	</form:entry>
+    <form:entry field="dsn" title="${%zdevops.classic.datasetName.title}">
+        <form:textbox/>
+    </form:entry>
+    <form:entry field="member" title="${%zdevops.classic.member.title}">
+        <form:textbox/>
+    </form:entry>
+    <form:entry field="text" title="${%zdevops.classic.text.title}">
+        <form:textarea/>
+    </form:entry>
+</jelly:jelly>

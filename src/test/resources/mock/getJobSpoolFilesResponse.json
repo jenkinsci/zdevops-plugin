@@ -1,0 +1,18 @@
+[
+  {
+    "recfm": "UA",
+    "records-url": "https:\/\/test:10443\/zosmf\/restjobs\/jobs\/T0000555S0W1....DB9E6D9D.......%3A\/files\/2\/records",
+    "stepname": "JES2",
+    "subsystem": "JES2",
+    "job-correlator": "T0000555S0W1....DB9E6D9D.......:",
+    "byte-count": 0,
+    "lrecl": 133,
+    "jobid": "TSU00555",
+    "ddname": "JESMSGLG",
+    "id": 2,
+    "record-count": 2,
+    "class": "K",
+    "jobname": "NBEL",
+    "procstep": null
+  }
+]

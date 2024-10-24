@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?jelly escape-by-default='true'?>
+
+<jelly:jelly xmlns:jelly="jelly:core" xmlns:form="/lib/form">
+	<form:entry field="connectionName" title="${%zdevops.classic.connection.title}">
+		<form:select/>
+	</form:entry>
+    <form:entry field="dsn" title="${%zdevops.classic.dsn.title}">
+        <form:textbox/>
+    </form:entry>
+    <form:entry field="vol" title="${%zdevops.classic.vol.title}">
+        <form:textbox/>
+    </form:entry>
+</jelly:jelly>
