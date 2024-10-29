@@ -465,7 +465,8 @@
         </repository>
 
         <repository>
-            <id>zowe.jfrog.io</id>
+            <!-- Do not change the ID - ref. https://github.com/jenkins-infra/helpdesk/issues/3501 -->
+            <id>org.zowe.sdk</id>
             <url>https://zowe.jfrog.io/artifactory/libs-release</url>
         </repository>
     </repositories>
