@@ -1,0 +1,21 @@
+name: "Setup action"
+description: "Prepares for execution - set up Java, Kotlin, Maven"
+
+inputs:
+  jdkVersion:
+    description: "JDK version"
+    required: false
+    default: "17"
+  mavenVersion:
+    description: "Maven version"
+    required: false
+    default: "3.9.4"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up JDK ${{ inputs.jdkVersion }}
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu'
+        java-version: ${{ inputs.jdkVersion }}

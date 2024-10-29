@@ -1,0 +1,21 @@
+1                       J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  S 0 W 1
+0
+ 13.27.41 JOB09502 ---- WEDNESDAY, 06 APR 2022 ----
+ 13.27.41 JOB09502  IRR010I  USERID ZOSMFAD  IS ASSIGNED TO THIS JOB.
+ 13.27.43 JOB09502  ICH70001I ZOSMFAD  LAST ACCESS AT 13:27:39 ON WEDNESDAY, APRIL 6, 2022
+ 13.27.43 JOB09502  $HASP373 IJMP05   STARTED - INIT 7    - CLASS A        - SYS S0W1
+ 13.27.43 JOB09502  IEF403I IJMP05 - STARTED - TIME=13.27.43
+ 13.27.43 JOB09502  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+ 13.27.43 JOB09502  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+ 13.27.43 JOB09502  -STEP1                00     12      0       .00       .00     .0                BATCH        0     0     0     0
+ 13.27.44 JOB09502  -DD00907              00     92      0       .00       .00     .0             4  BATCH        1     0     0     0
+ 13.27.44 JOB09502  -DD00908              00     93      0       .00       .00     .0             3  BATCH        0     0     0     0
+ 13.27.45 JOB09502  -DD00909              00     90      0       .00       .00     .0             4  BATCH        0     0     0     0
+ 13.27.45 JOB09502  -DD00910              00     90      0       .00       .00     .0             3  BATCH        0     0     0     0
+ 13.27.47 JOB09502  -DD00911              00     87      0       .00       .00     .0             3  BATCH        0     0     0     0
+ 13.27.47 JOB09502  -DD00912              00     92      0       .00       .00     .0             3  BATCH        0     0     0     0
+ 13.27.48 JOB09502  -DD00913              00    107      0       .00       .00     .0             4  BATCH        0     0     0     0
+ 13.27.49 JOB09502  -DD00914              00     91      0       .00       .00     .0             3  BATCH        0     0     0     0
+ 13.30.15 JOB09502  IEF404I IJMP05 - ENDED - TIME=13.30.15
+ 13.30.15 JOB09502  -IJMP05   ENDED.  NAME-TESTJCL              TOTAL TCB CPU TIME=      .24 TOTAL ELAPSED TIME=   2.5
+ 13.30.15 JOB09502  $HASP395 IJMP05   ENDED - RC=0000

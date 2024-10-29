@@ -1,0 +1,26 @@
+{
+  "servletKey": "TEST-120-aabgaaad",
+  "ver": "0100",
+  "tsoData": [
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "IKJ56650I TIME-02:20:29 PM. CPU-00:00:00 SERVICE-448 SESSION-00:00:39 OCTOBER 4,2023"
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "READY "
+      }
+    },
+    {
+      "TSO PROMPT": {
+        "VERSION": "0100",
+        "HIDDEN": "FALSE"
+      }
+    }
+  ],
+  "reused": false,
+  "timeout": false
+}

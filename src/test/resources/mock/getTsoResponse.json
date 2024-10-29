@@ -1,0 +1,50 @@
+{
+  "servletKey": "TEST-120-aabgaaad",
+  "ver": "0100",
+  "tsoData": [
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "IKJ56951I NO BROADCAST MESSAGES"
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "*****************************************************************"
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "*                                                               *"
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "*****************************************************************"
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": " "
+      }
+    },
+    {
+      "TSO MESSAGE": {
+        "VERSION": "0100",
+        "DATA": "READY "
+      }
+    },
+    {
+      "TSO PROMPT": {
+        "VERSION": "0100",
+        "HIDDEN": "FALSE"
+      }
+    }
+  ],
+  "reused": false,
+  "timeout": false
+}
