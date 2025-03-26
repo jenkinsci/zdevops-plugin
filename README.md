@@ -59,26 +59,26 @@ stage ("stage-name") {
 ```groovy
 zosmf ("z/os-connection-name") {
     allocateDS(
-            // Mandatory Parameters below:
-            dsn: "EXAMPLE.DATASET",
-            dsOrg: "PS",
-            primary: 1,
-            secondary: 1,
-            recFm: "FB",
-            failOnExist:"False",
-            // Optional Parameters below:
-            volser:"YOURVOL",
-            unit:"SYSDA",
-            alcUnit:"TRK",
-            dirBlk:"5",
-            blkSize:"800",
-            lrecl:"80",
-            storClass:"STORAGECLASS",
-            mgntClass:"MGMTCLASS",
-            dataClass:"DATACLASS",
-            avgBlk:"10",
-            dsnType:"LIBRARY",
-            dsModel:"MODEL.DATASET.NAME"
+        // Mandatory Parameters below:
+        dsn: "EXAMPLE.DATASET",
+        dsOrg: "PS",
+        primary: 1,
+        secondary: 1,
+        recFm: "FB",
+        failOnExist:"False",
+        // Optional Parameters below:
+        volser:"YOURVOL",
+        unit:"SYSDA",
+        alcUnit:"TRK",
+        dirBlk:"5",
+        blkSize:"800",
+        lrecl:"80",
+        storClass:"STORAGECLASS",
+        mgntClass:"MGMTCLASS",
+        dataClass:"DATACLASS",
+        avgBlk:"10",
+        dsnType:"LIBRARY",
+        dsModel:"MODEL.DATASET.NAME"
     )
 }
 ```
