@@ -1,7 +1,7 @@
-# Zowe zDevOps Jenkins plugin
+# Zowe® zDevOps Jenkins® plugin
 
 ## About the plugin
-The Zowe zDevOps Jenkins Plugin by [IBA Group](https://ibagroupit.com/?utm_campaign=IBA_W-Mainframe&utm_source=jenkins&utm_medium=referral&utm_content=description_zdevops) is an open-source, secure , and reliable agent-less Jenkins plugin that makes it possible to perform most of the actual tasks on the mainframe, managing it with a modern native mainframe zOSMF REST API and the capabilities of available zOSMF SDKs.
+The Zowe zDevOps Jenkins plugin is an open-source, secure, and reliable agent-less plugin for Jenkins that makes it possible to perform most of the actual tasks on the mainframe, managing it with a modern native mainframe zOSMF REST API and the capabilities of available zOSMF SDKs. [Zowe](https://www.zowe.org/) is a project hosted by the [Open Mainframe Project](https://www.openmainframeproject.org/), a [Linux Foundation](https://www.linuxfoundation.org/) project.
 
 ## Main features
 - Secure and modern connection of Jenkins to the mainframes through the use of zOSMF REST API.
@@ -11,19 +11,6 @@ The Zowe zDevOps Jenkins Plugin by [IBA Group](https://ibagroupit.com/?utm_campa
 - z/OSMF connection validation.
 - Convenient user interface panels for working with the mainframe
 - Fast execution and functional extensibility.
-
-## About us
-With over 30 years of experience in the mainframe domain, IBA Group is committed to maximizing your mainframe investment and enhancing your IT flexibility.
-
-One of the services we offer is Mainframe DevOps. Our approach is highly flexible, as we work with customers to choose the essential toolset for establishing a pipeline based on their preferences, existing tools, and the latest open-source opportunities (such as Zowe and plugins).
-
-We are also familiar with [Mainframe DevOps Solutions](https://mainframe.ibagroupit.com/?utm_campaign=IBA_W-Mainframe&utm_source=jenkins&utm_medium=referral&utm_content=description_zdevops) of 2023 that can help modernize your mainframe and keep you competitive.
-
-We value your feedback and welcome any suggestions, proposals, or even complaints.
-
-Please feel free to contact us or schedule a call with our Mainframe DevOps expert.
-
-Thank you for considering IBA Group for your mainframe needs.
 
 ## Before use - Plugin configuration
 After successfully installing the plugin, you need to configure it for further work - this will require a minimum of actions.
@@ -38,31 +25,31 @@ You can save as many connections as you like, the system will keep the correspon
 ## Declarative methods brief list
 ```groovy
 stage ("stage-name") {
-  steps {
-    // ...
-    zosmf("z/os-connection-name") {
-        submitJob "//'EXAMPLE.DATASET(MEMBER)'"
-        submitJobSync "//'EXAMPLE.DATASET(MEMBER)'"
-        downloadDS "EXAMPLE.DATASET(MEMBER)"
-        downloadDS dsn:"EXAMPLE.DATASET(MEMBER)", vol:"VOL001"
-        allocateDS dsn:"EXAMPLE.DATASET", alcUnit:"TRK", dsOrg:"PS", primary:1, secondary:1, recFm:"FB", failOnExist:"False"
-        writeFileToDS dsn:"EXAMPLE.DATASET", file:"workspaceFile"
-        writeFileToDS dsn:"EXAMPLE.DATASET", file:"D:\\files\\localFile"
-        writeToDS dsn:"EXAMPLE.DATASET", text:"Write this string to dataset"
-        writeFileToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", file:"workspaceFile"
-        writeFileToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", file:"D:\\files\\localFile"
-        writeToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", text:"Write this string to member"
+    steps {
+        // ...
+        zosmf("z/os-connection-name") {
+            submitJob "//'EXAMPLE.DATASET(MEMBER)'"
+            submitJobSync "//'EXAMPLE.DATASET(MEMBER)'"
+            downloadDS "EXAMPLE.DATASET(MEMBER)"
+            downloadDS dsn:"EXAMPLE.DATASET(MEMBER)", vol:"VOL001"
+            allocateDS dsn:"EXAMPLE.DATASET", alcUnit:"TRK", dsOrg:"PS", primary:1, secondary:1, recFm:"FB", failOnExist:"False"
+            writeFileToDS dsn:"EXAMPLE.DATASET", file:"workspaceFile"
+            writeFileToDS dsn:"EXAMPLE.DATASET", file:"D:\\files\\localFile"
+            writeToDS dsn:"EXAMPLE.DATASET", text:"Write this string to dataset"
+            writeFileToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", file:"workspaceFile"
+            writeFileToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", file:"D:\\files\\localFile"
+            writeToMember dsn:"EXAMPLE.DATASET", member:"MEMBER", text:"Write this string to member"
 
-        writeToFile destFile: "u/USER/myfile", text: "Write this string to file"
-        writeFileToFile destFile: "u/USER/myfile", sourceFile: "myfile.txt"
-        writeFileToFile destFile: "u/USER/myfile", sourceFile: "myfile.txt", binary: "true"
+            writeToFile destFile: "u/USER/myfile", text: "Write this string to file"
+            writeFileToFile destFile: "u/USER/myfile", sourceFile: "myfile.txt"
+            writeFileToFile destFile: "u/USER/myfile", sourceFile: "myfile.txt", binary: "true"
 
-        deleteDataset dsn:"EXAMPLE.DATASET", failOnNotExist:"False"
-        deleteDataset dsn:"EXAMPLE.DATASET", member:"MEMBER", failOnNotExist:"True"
-        deleteDatasetsByMask mask:"EXAMPLE.DATASET.*", failOnNotExist:"False"
+            deleteDataset dsn:"EXAMPLE.DATASET", failOnNotExist:"False"
+            deleteDataset dsn:"EXAMPLE.DATASET", member:"MEMBER", failOnNotExist:"True"
+            deleteDatasetsByMask mask:"EXAMPLE.DATASET.*", failOnNotExist:"False"
+        }
+        // ...
     }
-    // ...
-  }
 }
 ```
 
@@ -96,26 +83,26 @@ zosmf ("z/os-connection-name") {
 }
 ```
 **Mandatory Parameters:**
-   * ```dsn:"EXAMPLE.DATASET"``` - The name of the dataset to be allocated
-   * ```dsOrg:"PS"``` - The dataset organization (could be only PO, POE, PS, VS)
-   * ```primary:"1"``` - The primary allocation size in cylinders or tracks
-   * ```secondary:"1"``` - The secondary allocation size in cylinders or tracks
-   * ```recFm:"FB"``` - The record format (could be only F, FB, V, VB, U, VSAM, VA)
-   * ```failOnExist:"False"``` - If the dataset already exists and the option is enabled, execution will halt. (Boolean parameter, is set to 'False' by default)
+* ```dsn:"EXAMPLE.DATASET"``` - The name of the dataset to be allocated
+* ```dsOrg:"PS"``` - The dataset organization (could be only PO, POE, PS, VS)
+* ```primary:"1"``` - The primary allocation size in cylinders or tracks
+* ```secondary:"1"``` - The secondary allocation size in cylinders or tracks
+* ```recFm:"FB"``` - The record format (could be only F, FB, V, VB, U, VSAM, VA)
+* ```failOnExist:"False"``` - If the dataset already exists and the option is enabled, execution will halt. (Boolean parameter, is set to 'False' by default)
 
 **Optional parms:**
-   * ```volser:"YOURVOL"``` - Volume serial number where the dataset will be allocated.
-   * ```unit:"SYSDA"``` - Specifies the type of storage device. SYSDA is a common direct access storage device.
-   * ```alcUnit:"TRK"``` - Allocation units (CYL for cylinders, TRK for tracks).
-   * ```dirBlk:"5"``` - Directory block records.
-   * ```blkSize:"800"``` - BLKSIZE=800: Block size of 800 bytes.
-   * ```lrecl:"80"``` - Logical record length.
-   * ```storClass:"STORAGECLASS"``` - Storage class for SMS-managed datasets.
-   * ```mgntClass:"MGMTCLASS"``` - Management class for SMS-managed datasets.
-   * ```dataClass:"DATACLASS"``` - Data class for SMS-managed datasets.
-   * ```avgBlk:"10"``` - Average block length.
-   * ```dsnType:"LIBRARY"``` - Specifies the type of dataset, LIBRARY for a PDS or PDSE.
-   * ```dsModel:"MODEL.DATASET.NAME"``` - Data set model is a predefined set of attributes that can be used to allocate new data sets with the same characteristics ("LIKE" parameter).
+* ```volser:"YOURVOL"``` - Volume serial number where the dataset will be allocated.
+* ```unit:"SYSDA"``` - Specifies the type of storage device. SYSDA is a common direct access storage device.
+* ```alcUnit:"TRK"``` - Allocation units (CYL for cylinders, TRK for tracks).
+* ```dirBlk:"5"``` - Directory block records.
+* ```blkSize:"800"``` - BLKSIZE=800: Block size of 800 bytes.
+* ```lrecl:"80"``` - Logical record length.
+* ```storClass:"STORAGECLASS"``` - Storage class for SMS-managed datasets.
+* ```mgntClass:"MGMTCLASS"``` - Management class for SMS-managed datasets.
+* ```dataClass:"DATACLASS"``` - Data class for SMS-managed datasets.
+* ```avgBlk:"10"``` - Average block length.
+* ```dsnType:"LIBRARY"``` - Specifies the type of dataset, LIBRARY for a PDS or PDSE.
+* ```dsModel:"MODEL.DATASET.NAME"``` - Data set model is a predefined set of attributes that can be used to allocate new data sets with the same characteristics ("LIKE" parameter).
 
 
 ### deleteDataset - Represents an action for deleting datasets and members in a declarative style
@@ -125,9 +112,9 @@ zosmf ("z/os-connection-name") {
 }
 ```
 **Mandatory Parameters:**
-   * ```dsn:"EXAMPLE.DATASET"``` - Sequential or library dataset name for deletion
-   * ```member:"MEMBER"``` - Dataset member name for deletion
-   * ```failOnNotExist:"False"``` - If the dataset has been deleted and the option is enabled, execution will halt. (Boolean parameter, is set to 'False' by default)
+* ```dsn:"EXAMPLE.DATASET"``` - Sequential or library dataset name for deletion
+* ```member:"MEMBER"``` - Dataset member name for deletion
+* ```failOnNotExist:"False"``` - If the dataset has been deleted and the option is enabled, execution will halt. (Boolean parameter, is set to 'False' by default)
 
 **Expected behavior under various deletion scenarios:**
 
@@ -194,9 +181,9 @@ pipeline {
             steps {
                 // Checkout the source code from Git
                 checkout scmGit(
-                    branches: [[name: "${GIT_BRANCH}"]],
-                    userRemoteConfigs: [[credentialsId:  "${GIT_USER_CREDENTIAL_ID}",
-                    url: "${GIT_REPOSITORY_URL}"]])
+                        branches: [[name: "${GIT_BRANCH}"]],
+                        userRemoteConfigs: [[credentialsId:  "${GIT_USER_CREDENTIAL_ID}",
+                                             url: "${GIT_REPOSITORY_URL}"]])
             }
         }
 
@@ -209,14 +196,14 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Add JCL content') {
             steps {
                 script {
-                   // Read the content of the JCL job into a variable
-                   env.JCL_CONTENT = readFile("${JCL_JOB_TEMPLATE}").trim()
-                   // Print the content of the file (for debugging purposes)
-                   echo "JCL job content:\n${env.JCL_CONTENT}"
+                    // Read the content of the JCL job into a variable
+                    env.JCL_CONTENT = readFile("${JCL_JOB_TEMPLATE}").trim()
+                    // Print the content of the file (for debugging purposes)
+                    echo "JCL job content:\n${env.JCL_CONTENT}"
                 }
                 zosmf("${ZOS_CONN_ID}") {
                     writeFileToDS dsn:"${PS_DATASET_2}", file:"${JCL_JOB_TEMPLATE}"
@@ -225,7 +212,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Add USS content') {
             steps {
                 zosmf("${ZOS_CONN_ID}") {
@@ -234,7 +221,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Submit JCL jobs') {
             steps {
                 zosmf("${ZOS_CONN_ID}") {
@@ -252,7 +239,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Clean up') {
             steps {
                 zosmf("${ZOS_CONN_ID}") {
@@ -275,26 +262,26 @@ pipeline {
                 """
 
                 httpRequest acceptType: 'APPLICATION_JSON',
-                            contentType: 'APPLICATION_JSON',
-                            httpMode: 'POST',
-                            requestBody: jiraComment,
-                            url: "${JIRA_URL}/rest/api/2/issue/${JIRA_ISSUE_KEY}/comment",
-                            authentication: 'jira-credentials-id'
+                        contentType: 'APPLICATION_JSON',
+                        httpMode: 'POST',
+                        requestBody: jiraComment,
+                        url: "${JIRA_URL}/rest/api/2/issue/${JIRA_ISSUE_KEY}/comment",
+                        authentication: 'jira-credentials-id'
             }
         }
-        
+
         success {
             // Notify success (example: send email)
             mail to: '${JIRA_USER}',
-                 subject: "SUCCESS: Build ${env.BUILD_NUMBER}",
-                 body: "The build ${env.BUILD_NUMBER} was successful."
+                    subject: "SUCCESS: Build ${env.BUILD_NUMBER}",
+                    body: "The build ${env.BUILD_NUMBER} was successful."
         }
-        
+
         failure {
             // Notify failure (example: send email)
             mail to: '${JIRA_USER}',
-                 subject: "FAILURE: Build ${env.BUILD_NUMBER}",
-                 body: "The build ${env.BUILD_NUMBER} failed. Please check the Jenkins logs for more details."
+                    subject: "FAILURE: Build ${env.BUILD_NUMBER}",
+                    body: "The build ${env.BUILD_NUMBER} failed. Please check the Jenkins logs for more details."
         }
     }
 }
@@ -313,7 +300,7 @@ Assuming a <b>.hpi</b> file has been downloaded, a logged-in Jenkins administrat
 4. <b>Deploy</b> the plugin file.
 
 ## Manual Jenkins plugin installation (Installation via source code build and .hpi file upload)
-1. Download the Zowe zDevOps Jenkins plugin source code from its [official GitHub repository](https://github.com/jenkinsci/zdevops-plugin)
+1. Download the Zowe zDevOps Jenkins plugin source code from its [official Jenkins GitHub repository](https://github.com/jenkinsci/zdevops-plugin)
 2. It is necessary to build the project with the help of the Maven Build Tool
 3. To generate the ```target``` dir with generated-sources - you have to run the Maven command: ```mvn localizer:generate```
 4. Next, you need to generate an installation file: .hpi or .jpi file (both are installation files for the Jenkins plugin). This can be done by executing Maven command ```mvn install``` or by ```mvn hpi:hpi```.
