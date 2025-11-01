@@ -32,7 +32,7 @@ jobs:
         run: pwd && ls -l target/
 
       - name: Archive the Build Output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: zowe-zdevops-hpi
           path: target/*.hpi
